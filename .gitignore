@@ -7,6 +7,7 @@ __pycache__/
 .secrets
 *.py[cod]
 *$py.class
+*.db
 
 # C extensions
 *.so
