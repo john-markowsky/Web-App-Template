@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="ui centered grid">
+    <div class="twenty wide column">
+      <h1>{SECTION_HEADER} Automatic Item Discovery</h1>
+      <p>Discover all items in your network automatically.</p>
+
+      <form class="ui form" action="/check" method="post">
+        <div class="field">
+          <label for="domain">Domain:</label>
+          <input type="text" id="domain" name="domain" required placeholder="Enter the domain to check (e.g., example.com)">
+        </div>
+        <input class="ui button" type="submit" value="Check">
+      </form>
+
+      {% if items %}
+        <h2>{SECTION_HEADER} Check Results:</h2>
+        <table class="ui celled table">
+          <thead>
+            <tr>
+              <th>Subject (Common Name)</th>
+              <th>Issuer (Organization)</th>
+              <th>Valid From</th>
+              <th>Valid Until</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in items %}
+              <tr>
+                <td>{{ item.subject | extract_common_name }}</td>
+                <td>{{ item.issuer | extract_organization }}</td>
+                <td>{{ item.not_valid_before }}</td>
+                <td>{{ item.not_valid_after }}</td>
+                <td>{{ item.validity_status }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

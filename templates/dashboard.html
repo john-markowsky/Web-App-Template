@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="twenty wide column">
+    <h1>Dashboard</h1>
+    <h2>User Data 1</h2>
+    <table class="ui celled table">
+        <thead>
+            <tr>
+                <th>IP Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for host in active_hosts %}
+            <tr>
+                <td>{{ host }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h2>User Data 2</h2>
+    <table class="ui celled table">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Issuer</th>
+                <th>Valid From</th>
+                <th>Valid Until</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.subject }}</td>
+                <td>{{ item.issuer }}</td>
+                <td>{{ item.valid_from }}</td>
+                <td>{{ item.valid_until }}</td>
+                <td>{{ item.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

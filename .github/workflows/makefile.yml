@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Set up venv and install dependencies
+      run: make setup install
+
+    - name: Lint with pylint
+      run: make lint
+
+    - name: Check code formatting with Black
+      run: make format
+
+    - name: Run tests
+      run: make test

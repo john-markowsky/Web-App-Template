@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="twenty wide column">
+        <h1>{SECTION_HEADER} Register</h1>
+        <form class="ui form" action="/register" method="post">
+            <div class="field">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required placeholder="Enter a unique username">
+            </div>
+            <div class="field">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Enter a secure password">
+            </div>
+            <div class="field">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter a valid email address">
+            </div>
+            <div class="field">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required placeholder="Enter your first name">
+            </div>
+            <div class="field">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required placeholder="Enter your last name">
+            </div>
+            <div class="field">
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company" placeholder="Enter your company name (optional)">
+            </div>
+            <div class="field">
+                <label for="job_title">Job Title:</label>
+                <input type="text" id="job_title" name="job_title" placeholder="Enter your job title (optional)">
+            </div>
+            <input class="ui button" type="submit" value="Register">
+        </form>
+        
+    </div>
+{% endblock %}

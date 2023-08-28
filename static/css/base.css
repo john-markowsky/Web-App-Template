@@ -1,0 +1,168 @@
+/* Custom styles for the web page */
+
+.ui.container.segment {
+    background-color: #FFFFFF; /* White background */
+    color: #1c2a3a; /* Deep blue text color */
+    border: none; /* Remove border */
+    width: 70%; /* Set width as a percentage of the viewport width */
+    margin: 0 auto; /* Center the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    border-radius: 10px; /* Add rounded corners */
+    padding: 10px 5%; /* Reduce padding */
+}
+
+.intro-text {
+    font-size: 18px; /* Set the font size */
+    font-style: italic; /* Set the font style to italic */
+}
+
+/* Centering images */
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Styling for paragraphs */
+p {
+    color: black;
+}
+
+/* Align the text to the left in the segment */
+.ui.container.segment {
+    text-align: left !important;
+}
+
+/* Styling for the body */
+body {
+    background-color: #5a5a5a;
+    color: #fff;
+}
+
+/* Inverted menu styles */
+.ui.inverted.menu {
+    background-color: #1c2a3a;
+    border-color: #000;
+    box-shadow: none;
+}
+
+.ui.inverted.menu .item {
+    color: #ffffff;
+}
+
+.ui.inverted.menu .active.item {
+    background-color: #3c4b6b;
+    color: #222;
+}
+
+/* Inverted segment styles */
+.ui.inverted.segment {
+    background-color: #222;
+    color: #fff;
+    border-color: #000;
+    box-shadow: none;
+}
+
+.ui.inverted.segment h2.ui.header {
+    color: #fff;
+}
+
+.ui.inverted.segment input {
+    background-color: #fff;
+    color: #222;
+}
+
+.ui.inverted.segment button.ui.button {
+    background-color: #3c4b6b;
+    color: #FFF5E1;
+}
+
+/* Styling for the preview image */
+.preview-image {
+    margin-top: 20px;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+/* UI centered grid */
+.ui.centered.grid {
+    padding: 50px 0;
+}
+
+/* UI raised very padded text container segment */
+.ui.raised.very.padded.text.container.segment {
+    background-color: #FFF5E1;
+    color: #1c2a3a;
+}
+
+/* Logo styles */
+.logo-image {
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+}
+
+/* Custom Style for Paragraphs */
+p {
+    color: black;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.image-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thumb.image {
+    width: 40%;
+    height: auto;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+}
+
+.ui.button {
+    background-color: #1c2a3a; /* Deep blue background color */
+    color: #ffffff; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    padding: 10px 20px; /* Add padding */
+}
+
+.ui.button:hover {
+    background-color: #426388; /* Lighter blue background color */
+}
+
+.ui.button.highlighted {
+    background-color: #FFD700; /* Gold background color */
+    color: #1c2a3a; /* Deep blue text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    padding: 10px 20px; /* Add padding */
+}
+
+.ui.button.highlighted:hover {
+    background-color: #FFC125; /* Slightly darker gold background color */
+}
+.item.nav-item.gold {
+    color: #FFD700 !important;
+}
+.ui.container.footer {
+    color: #1c2a3a;
+    text-align: center;
+    font-weight: bold;
+}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="ui centered grid">
+    <div class="twenty wide column">
+        <!-- Introduction Header -->
+        <h1>Welcome to {BRAND_NAME}!</h1>
+        <!-- Introduction Text -->
+        <p class="intro-text">{BRAND_NAME} Intro text here.</p>
+        <div class="ui divider"></div>
+        <p>Our products include:</p>
+        <div class="image-grid">
+            <div class="image-cell">
+                <img src="static/images/search.png" alt="Search" class="image">
+                <p class="title">Item One</p>
+                <p class="description">Item One Description</p>
+                <a href="/check" class="ui button highlighted">Access for Free</a>
+            </div>
+            <div class="image-cell">
+                <img src="static/images/renewal.png" alt="Renewal" class="image">
+                <p class="title">Item Two </p>
+                <p class="description">Item Two Description</p>
+                <a href="#" class="ui button">Learn More</a>
+            </div>
+            <div class="image-cell">
+                <img src="static/images/success.png" alt="Success" class="image">
+                <p class="title">Item Three</p>
+                <p class="description">Item Three Description</p>
+                <a href="#" class="ui button">Learn More</a>
+            </div>
+            <div class="image-cell">
+                <img src="static/images/reports.png" alt="Reports" class="image">
+                <p class="title">Item Four</p>
+                <p class="description">Item Four Description.</p>
+                <a href="#" class="ui button">Learn More</a>
+            </div>
+        </div>
+    </div>
+  </div>
+{% endblock %}

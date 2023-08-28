@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="ui centered grid">
+    <div class="twenty wide column">
+      {% if request.query_params.get('error') %}
+      <div class="ui negative message">
+          <div class="header">
+              Notice
+          </div>
+          <p>{{ request.query_params.get('error') }}</p>
+      </div>
+      {% endif %}      
+      <h1>{SECTION_HEADER} Login</h1>
+      <form class="ui form" action="/login" method="post">
+          <div class="field">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" required>
+          </div>
+          <div class="field">
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required>
+          </div>
+          <input class="ui button" type="submit" value="Login">
+      </form>
+      <div>
+        Don't have an account? <a href="/register">Register here</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

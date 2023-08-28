@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="twenty wide column">
+    <h1>{SECTION_HEADER} Profile</h1>
+    <form class="ui form" action="/profile" method="post">
+        <div class="field">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="{{ user.username }}" readonly>
+        </div>
+        <div class="field">
+            <label for="current_password">Current Password:</label>
+            <input type="password" id="current_password" name="current_password" required placeholder="Enter your current password">
+        </div>
+        <div class="field">
+            <label for="new_password">New Password:</label>
+            <input type="password" id="new_password" name="new_password" placeholder="Enter a new password (optional)">
+        </div>
+        <div class="field">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{ user.email }}" placeholder="Enter a new email address (optional)">
+        </div>
+        <div class="field">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" value="{{ user.first_name }}" readonly>
+        </div>
+        <div class="field">
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" value="{{ user.last_name }}" readonly>
+        </div>
+        <div class="field">
+            <label for="company">Company:</label>
+            <input type="text" id="company" name="company" value="{{ user.company }}" readonly>
+        </div>
+        <div class="field">
+            <label for="job_title">Job Title:</label>
+            <input type="text" id="job_title" name="job_title" value="{{ user.job_title }}" readonly>
+        </div>
+        <div class="field">
+            <label for="api_key">API Key:</label>
+            <input type="password" id="api_key" name="api_key" value="{{ user.api_key }}" readonly>
+            <button class="ui button" onclick="toggleApiKeyVisibility(event)">Show API Key</button>
+            <button class="ui button" type="button" onclick="copyApiKey()">Copy API Key</button>
+        </div>
+        <input class="ui button" type="submit" value="Update Profile">
+    </form>
+</div>
+<script>
+    function toggleApiKeyVisibility(event) {
+        event.preventDefault();
+        var apiKeyInput = document.getElementById("api_key");
+        if (apiKeyInput.type === "password") {
+            apiKeyInput.type = "text";
+            event.target.textContent = "Hide API Key";
+        } else {
+            apiKeyInput.type = "password";
+            event.target.textContent = "Show API Key";
+        }
+    }
+
+    function copyApiKey() {
+        var copyText = document.getElementById("api_key");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+    }
+</script>
+{% endblock %}
